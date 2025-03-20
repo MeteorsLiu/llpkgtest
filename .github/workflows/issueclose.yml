@@ -8,7 +8,7 @@ jobs:
   clean-resource:
     runs-on: ubuntu-latest
     if: |
-      contains(github.event.issue.labels.*.name, 'branch:release-branch.')
+      contains(github.event.issue.labels[0].name, 'branch:release-branch.') == true
     steps:
       - name: Checkout
         id: checkout
