@@ -5,6 +5,11 @@ name: Verify Go Module
 # consider maintenance branch
 on:
   pull_request:
+    types:
+      - opened
+    branches:
+      - "release-branch.*"
+      - "main"
 
 
 jobs:
