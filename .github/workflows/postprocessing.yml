@@ -8,8 +8,8 @@ on:
     types:
       - closed
     branches:
-      - "release-branch.*"
-      - "main"
+      - 'release-branch.**'
+      - main
 
 
 jobs:

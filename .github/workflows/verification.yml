@@ -6,8 +6,8 @@ name: Verify Go Module
 on:
   pull_request:
     branches:
-      - "release-branch.*"
-      - "main"
+      - 'release-branch.**'
+      - main
 
 
 jobs:
