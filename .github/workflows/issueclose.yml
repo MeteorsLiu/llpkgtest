@@ -6,9 +6,9 @@ on:
 
 jobs:
   clean-resource:
-    if: |
-      contains(github.event.issue.labels.*.name, 'release-branch')
     runs-on: ubuntu-latest
+    if: |
+      contains(github.event.issue.labels.*.name, 'branch:release-branch.')
     steps:
       - name: Checkout
         id: checkout
