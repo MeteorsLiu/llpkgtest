@@ -6,8 +6,6 @@ on:
 
 jobs:
   clean-resource:
-    if: |
-      contains(github.event.issue.labels[0].name, 'branch:release-branch.')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -19,6 +17,7 @@ jobs:
           go-version: "1.23"
       - name: Skip Cache Parser Tool
         run: |
+          echo ${{ github.event.issue.labels[0].name }}
           go env -w GOPRIVATE=github.com/MeteorsLiu/llpkgstore
       - name: Set up Parser Tool
         run: |
