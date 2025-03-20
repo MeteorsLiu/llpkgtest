@@ -23,6 +23,7 @@ jobs:
         with:
           ref: main
           path: .main
+          fetch-tags: true
       - name: Copy llpkgstore.json to root
         continue-on-error: true
         run: |
