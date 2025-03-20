@@ -1,9 +1,10 @@
 name: Verify Go Module
 
+
+# don't limit to main branch
+# consider maintenance branch
 on:
   pull_request:
-    branches:
-      - main
     types:
       - opened
 

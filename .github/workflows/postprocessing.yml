@@ -1,10 +1,10 @@
 name: Post-processing
 
 
+# don't limit to main branch
+# consider maintenance branch
 on:
   pull_request:
-    branches:
-      - main
     types:
       - closed
 
