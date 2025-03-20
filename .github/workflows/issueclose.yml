@@ -7,8 +7,9 @@ on:
 jobs:
   clean-resource:
     runs-on: ubuntu-latest
+    # I don't know why github action cointains returns false always when using labels.*.name
     if: |
-      contains(github.event.issue.labels.*.name, 'branch:release-branch.') == true
+      contains(github.event.issue.labels[0].name, 'branch:release-branch.')
     steps:
       - name: Checkout
         id: checkout
