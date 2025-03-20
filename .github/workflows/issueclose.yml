@@ -5,7 +5,8 @@ on:
     types: [closed]
 
 jobs:
-  maintenance:
+  clean-resource:
+    if: contains(github.event.issue.labels.*.name, 'branch:release-branch.')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -20,7 +21,7 @@ jobs:
           go env -w GOPRIVATE=github.com/MeteorsLiu/llpkgstore
       - name: Set up Parser Tool
         run: |
-          go install -v github.com/MeteorsLiu/llpkgstore/cmd/llpkgstore@rebase
+          go install -v github.com/MeteorsLiu/llpkgstore/cmd/maintain@gha-test
       - name: Run cleaner process
         run: |
-          llpkgstore cleaner
+          maintain issueclose
