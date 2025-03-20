@@ -21,7 +21,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: main
-          fetch-tags: true
 
       - name: Copy llpkgstore.json to root
         continue-on-error: true
